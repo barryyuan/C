@@ -1,0 +1,177 @@
+1.	Write a program to print your name and address.
+#include <stdio.h>
+int main(void)
+{    
+     
+     printf("barry\n北京\n");
+     getchar();
+     return 0;
+}
+2.	Write a program that converts your age in years to days and displays both values. At this point, don’t worry about fractional years and leap years.
+#include <stdio.h>
+#define Y 365
+int main(void)
+{
+     int day, year;
+     
+     printf("请输入您的年龄/年：");
+     scanf("%d", &year);
+     getchar();
+     printf("year = %d\nday = %d\n", year, Y * year);
+     getchar();
+     return 0;
+}
+3.	Assuming that each of the following examples is part of a complete program, what will each one print?
+a.	 printf("Baa Baa Black Sheep.");
+printf("Have you any wool?\n");
+Output:
+Baa Baa Black Sheep. 
+Have you any wool?
+Press any key to continue
+
+b.	printf("Begone!\nO creature of lard!\n");
+Output:
+Begone!
+O creature of lard!
+Press any key to continue
+
+c.	printf("What?\nNo/nfish?\n");
+Output:
+What?
+No/nfish?
+Press any key to continue
+d.  int num;
+num = 2;
+printf("%d + %d = %d", num, num, num + num);
+Output:
+2+2=4 Press any key to continue
+
+4.	Correct this silly program. (The / in C means division.)
+/*missing ‘#include<stdio.h>’ before ‘void’*/
+void main(int) / this program is perfect / /*misusing comments*/
+{
+cows, legs integer; /*wrong declaration*/
+printf("How many cow legs did you count?\n);
+scanf("%c", legs); /*misusing ‘c’ and missing ‘&’ before ‘legs’ */
+cows = legs / 4;
+printf("That implies there are %f cows.\n", cows) /*misusing ‘f’ and missing ‘;’ before ‘}’ */
+}
+
+Correction:
+#include <stdio.h>
+void main(int) /*this program is perfect */
+{
+int cows, legs;
+printf("How many cow legs did you count?\n");
+scanf("%d", &legs);
+cows = legs / 4;
+printf("That implies there are %d cows.\n", cows);
+}
+
+5.	It’s find the error time!
+/*missing ‘#include<stdio.h>’ before ‘define’*/
+define B booboo /*missing ‘#’ before ‘define’*/
+define X 10 /*missing ‘#’ before ‘define’*/
+main(int)
+{
+int age;
+char name;/*undeclared character string length*/
+printf("Please enter your first name.");
+scanf("%s", name); 
+printf("All right, %c, what's your age?\n", name); /*misusing ‘c’*/
+scanf("%f", age); /*misusing ‘f’ and missing ‘&’ before ‘legs’ */
+xp = age + X; /* 'xp' : undeclared identifier*/
+printf("That's a %s! You must be at least %d.\n", B, xp);
+rerun 0; /* 'reurn' : undeclared identifier, missing ';' before 'constant' and function should return a value; 'void' return type assumed*/
+}
+
+Correction _define:
+#include <stdio.h>
+#define B "booboo"
+#define X 10
+
+main(int)
+{
+
+	int age,xp;
+    char name[20];
+
+    printf("Please enter your first name.");
+    scanf("%s", name);
+    printf("All right, %s, what's your age?\n", name);
+    scanf("%d", &age);
+    xp = age + X;
+    printf("That's a %s! You must be at least %d.\n", B, xp);
+    return 0;
+}
+
+Correction_array:
+#include <stdio.h>
+
+int main(void)
+{
+	 int age,xp,X;
+    char name[20];
+	
+	 X=10;
+    char string[10]="booboo";
+
+    printf("Please enter your first name.");
+    scanf("%s", name);
+    printf("All right, %s, what's your age?\n", name);
+    scanf("%d", &age);
+    xp = age + X;
+    printf("That's a %s! You must be at least %d.\n", string, xp);
+    return 0;
+}
+
+6. Write the output of the following C program	
+#include <stdio.h>
+void main(void)
+{
+	int day, chickens, rabbits;
+	float chicken_price, rabit_price, total_value;
+
+	day=1;
+	chickens=10;
+	rabbits=6;
+	chicken_price=23.5;
+	rabit_price=18;
+	total_value=chickens*chicken_price + rabbits*rabit_price;
+
+	printf("Day=%d number of chickens=%d number of rabbits=%d\n", day, chickens, rabbits);
+	printf("cost of chicken=%8.2f cost of rabbit=%8.2f\n", chicken_price, rabit_price);
+	printf("total cost=%f\n", total_value)	
+
+	day=12;
+	rabbits=10;
+	rabit_price=19.55;
+	total_value=chickens*chicken_price + rabbits*rabit_price;
+
+	printf("Day=%d number of chickens=%d number of rabbits=%d\n", day, chickens, rabbits);
+	printf("cost of chicken=%8.2f cost of rabbit=%8.2f\n", chicken_price, rabit_price);
+	printf("total cost=%f\n", total_value)	
+}
+
+Output:
+Day=1 number of chickens=10 number of rabbits=6
+cost of chicken=   23.50 cost of rabbit=   18.00
+total cost=343.000000
+Day=12 number of chickens=10 number of rabbits=10
+cost of chicken=   23.50 cost of rabbit=   19.55
+total cost=430.500000
+Press any key to continue
+
+7. Write a program that asks you to enter an ASCII code value, such as 66, and then prints the character having that ASCII code.
+
+#include <stdio.h>
+
+main()
+{
+	int i;
+
+	printf("Please enter ASCII code value:\n");
+	scanf("%d",&i);
+	printf("The corresponding character of ASCII code value is %c.\n", i);
+	return 0;
+}
